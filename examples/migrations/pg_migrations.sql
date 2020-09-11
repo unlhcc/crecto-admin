@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS blogs;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
-  id BIGSERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   email character varying NOT NULL,
   encrypted_password character varying,
   role character varying,
@@ -18,7 +18,7 @@ CREATE TABLE users(
 
 
 CREATE TABLE blogs(
-  id BIGSERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   user_id INTEGER references users(id),
   is_public bool,
   title character varying,

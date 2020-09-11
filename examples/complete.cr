@@ -85,7 +85,7 @@ end
 
 class Blog < Crecto::Model
   schema "blogs" do
-    field :user_id, Int64
+    field :user_id, Int32
     field :is_public, Bool
     field :title, String
     field :content, String
@@ -143,7 +143,7 @@ class Blog < Crecto::Model
   # when a user posts a blog, update the user's last posted time
   def after_created(user)
     return unless user.is_a? User
-    user.last_posted = Time.now
+    user.last_posted = Time.utc
     Repo.update(user)
   end
 end
