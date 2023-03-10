@@ -24,8 +24,7 @@ dependencies:
     version: 0.13.0
 
   kemal-csrf:
-    github: jianghengle/kemal-csrf
-    branch: master
+    github: kemalcr/kemal-csrf
 
   kemal-flash:
     github: neovintage/kemal-flash
